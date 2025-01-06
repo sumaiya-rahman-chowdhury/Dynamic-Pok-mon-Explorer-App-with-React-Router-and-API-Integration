@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { data } from "react-router";
-
+import { Link } from "react-router";
 export default function DisplayFetchdPokemon({ props }) {
-  //   console.log(props);
+  console.log(props);
   const [pokemonData, setPokemonData] = useState([]);
 
   useEffect(() => {
@@ -12,7 +11,7 @@ export default function DisplayFetchdPokemon({ props }) {
           props.map(async (pokemon) => {
             const res = await fetch(pokemon.url);
             const pokeDetails = await res.json();
-            console.log(pokeDetails);
+            // console.log(pokeDetails);
             return {
               name: pokemon.name,
               url: pokeDetails.sprites.front_default,
@@ -31,9 +30,15 @@ export default function DisplayFetchdPokemon({ props }) {
         pokemonData.map((pokemon, index) => (
           <div
             key={index}
-            className="pokemon-card bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 
-          rounded-lg shadow-lg transform transition hover:scale-105 w-72 "
+            className="box pokemon-card             
+          rounded-lg shadow-lg transform transition hover:scale-105 w-72 
+          
+          "
           >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
             <div className="pokemon-image bg-white rounded-t-lg p-3">
               <img
                 src={pokemon.url}
@@ -45,9 +50,11 @@ export default function DisplayFetchdPokemon({ props }) {
               <h2 className="text-2xl font-bold text-gray-800 uppercase">
                 {pokemon.name}
               </h2>
-              <button className="details-button mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:ring-4 focus:ring-red-300">
-                View Details
-              </button>
+              <Link to={`details/pokemon/${pokemon.name}`}>
+                <button className="details-button mt-4 bg-red-500 text-white py-2 px-4 rounded-md hover:bg-red-600 focus:ring-4 focus:ring-red-300">
+                  View Details
+                </button>
+              </Link>
             </div>
           </div>
         ))

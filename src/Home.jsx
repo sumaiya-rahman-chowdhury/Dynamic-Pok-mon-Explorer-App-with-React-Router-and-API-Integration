@@ -1,12 +1,15 @@
 import React from 'react'
-import { Outlet } from 'react-router'
+import FetchedPokemon from './components/FetchedPokemon'
+import { useTitle } from './hooks/useTitle'
 import Banner from './components/Banner'
 
+
 export default function Home() {
+    useTitle("Home")
   return (
-    <div>
-        <Outlet/>
+    <div className='space-y-10'>
         <Banner/>
+       <FetchedPokemon/>
     </div>
   )
 }
