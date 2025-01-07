@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { data } from "react-router";
 
 export const fetchData = createAsyncThunk("data/fetchData", async () => {
   const res = await fetch("https://pokeapi.co/api/v2/pokemon?limit=50");

@@ -18,10 +18,10 @@ export default function Navbar() {
             Home
           </a>
           <a
-            href="/explore"
+            href="/favorites"
             className="text-white hover:text-gray-200 transition duration-200"
           >
-            Explore
+           Favorites
           </a>
           <a
             href="/about"

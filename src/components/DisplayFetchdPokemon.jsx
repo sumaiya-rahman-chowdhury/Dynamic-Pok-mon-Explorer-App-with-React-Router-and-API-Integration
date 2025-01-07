@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router";
 export default function DisplayFetchdPokemon({ props }) {
-  console.log(props);
+  // console.log(props);
   const [pokemonData, setPokemonData] = useState([]);
 
   useEffect(() => {

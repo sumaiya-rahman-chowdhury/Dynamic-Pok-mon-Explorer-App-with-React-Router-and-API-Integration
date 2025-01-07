@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "./layout/Layout";
 import About from "./pages/About";
 import DetailsPage from "./pages/DetailsPage";
+import Favorites from "./pages/Favorites";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="favorites" element={<Favorites/>} />
         <Route path="details/pokemon/:name" element={<DetailsPage />} />
       </Route>
     </Routes>
