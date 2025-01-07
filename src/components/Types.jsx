@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../slice/slice";
 
-export default function Types() {
+export default function Types({typesHandle}) {
   const { data, loading, error } = useSelector((state) => state.data);
   const [filteredData, setFilteredData] = useState([]);
   const dispatch = useDispatch();
@@ -11,29 +11,7 @@ export default function Types() {
     dispatch(fetchData());
   }, [dispatch]);
 
-  const typesHandle = (type) => {
-    // Fetch detailed data for all Pokémon to access their types
-    const fetchDetailedData = async () => {
-      try {
-        const promises = data.map(async (pokemon) => {
-          const response = await fetch(pokemon.url);
-          const pokemonData = await response.json();
-          return pokemonData;
-        });
-        const detailedData = await Promise.all(promises);
 
-        // Filter Pokémon by type
-        const filtered = detailedData.filter((pokemon) =>
-          pokemon.types.some((t) => t.type.name === type.toLowerCase())
-        );
-        setFilteredData(filtered);
-      } catch (error) {
-        console.error("Error fetching detailed data:", error);
-      }
-    };
-
-    fetchDetailedData();
-  };
 
   return (
     <div>
