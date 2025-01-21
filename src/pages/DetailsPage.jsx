@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import toast from "react-hot-toast";
+import { useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router";
 
 export default function DetailsPage() {
+  const user = useSelector((state) => state.auth.user);
+  console.log(user);
   const { name } = useParams();
   const [details, setDetails] = useState({});
-
+  const navigate = useNavigate();
   useEffect(() => {
     (async () => {
       try {
@@ -20,10 +24,15 @@ export default function DetailsPage() {
   }, [name]);
 
   const handleAddToCart = (name) => {
+    if (!user) {
+      toast.error("Please login to add to cart");
+      return navigate("/login");
+    }
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
     existingCart.push(name);
     localStorage.setItem("cart", JSON.stringify(existingCart));
-    console.log(`${name} added to cart`);
+    toast.success(`${name} added to cart`);
+    // console.log(`${name} added to cart`);
   };
 
   return (

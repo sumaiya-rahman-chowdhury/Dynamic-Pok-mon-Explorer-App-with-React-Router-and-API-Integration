@@ -1,6 +1,25 @@
+import { getAuth, signOut } from "firebase/auth";
 import React from "react";
+import toast from "react-hot-toast";
+import { useDispatch, useSelector } from "react-redux";
+import { logedOut } from "../slice/authSlice";
 
 export default function Navbar() {
+  const user = useSelector((state) => state.auth.user);
+  const auth = getAuth();
+  const dispatch = useDispatch();
+
+  const handleSignOut = ()=>{
+    signOut(auth)
+    .then(()=>{
+      dispatch(logedOut());
+      toast.success("Successfully Logged Out");
+    })
+    .catch((error)=>{
+      console.log(error);
+    })
+  }
+  console.log(user);
   return (
     <nav className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
@@ -21,7 +40,7 @@ export default function Navbar() {
             href="/favorites"
             className="text-white hover:text-gray-200 transition duration-200"
           >
-           Favorites
+            Favorites
           </a>
           <a
             href="/about"
@@ -35,6 +54,23 @@ export default function Navbar() {
           >
             Contact
           </a>
+          {user ? (
+         <button onClick={handleSignOut}>
+           <a
+            href=""
+            className="text-white hover:text-gray-200 transition duration-200"
+          >
+            LogOut 
+          </a>
+         </button>
+        ) : (
+          <a
+            href="/login"
+            className="text-white hover:text-gray-200 transition duration-200"
+          >
+            Login
+          </a>
+        )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -91,6 +127,21 @@ export default function Navbar() {
         >
           Contact
         </a>
+        {user ? (
+          <a
+            href="/logout"
+            className="text-white hover:text-gray-200 transition duration-200"
+          >
+            LogOut
+          </a>
+        ) : (
+          <a
+            href="/login"
+            className="text-white hover:text-gray-200 transition duration-200"
+          >
+            Login
+          </a>
+        )}
       </div>
     </nav>
   );

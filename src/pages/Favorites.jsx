@@ -14,7 +14,7 @@ export default function Favorites() {
     setCart([]);
   };
   return (
-    <div className="p-5">
+    <div className="p-5 h-[100vh]">
       <h2 className="text-2xl font-bold mb-4">Favorites Added Items</h2>
       {cart.length > 0 ? (
         cart.map((item, index) => (
