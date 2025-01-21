@@ -20,7 +20,7 @@ export default function Login() {
   };
 
   return (
-    <div className="h-screen bg-gradient-to-r from-pink-400 via-purple-500 to-indigo-600 flex justify-center items-center">
+    <div className="h-screen  flex justify-center items-center">
       <form onSubmit={handleSignIn}>
         <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-sm">
           <h1 className="text-3xl font-extrabold text-center text-purple-600 mb-6">

@@ -42,15 +42,13 @@ export default function Banner({ onSearch }) {
             />
             <button
               onClick={() => onSearch(name)}
-              className="h-12 px-6 bg-blue-500 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
+              className="h-12 px-6 bg-purple-600 text-white font-bold rounded-lg shadow-lg hover:bg-blue-600 transition duration-300"
             >
               Search
             </button>
           </div>
         </div>
       </div>
-
-      <div className="p-6 bg-gray-100"></div>
     </div>
   );
 }

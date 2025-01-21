@@ -5,6 +5,8 @@ import Banner from "./components/Banner";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "./slice/slice";
 import Types from "./components/Types";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 export default function Home() {
   const [pokeMonCard, setPokemonCard] = useState([]);
@@ -70,8 +72,10 @@ export default function Home() {
   return (
     <div className="space-y-10">
       <Banner onSearch={handlerSearch} />
-      <Types typesHandle={typesHandle} />
+      {/* <Types typesHandle={typesHandle} /> */}
       <FetchedPokemon data={pokeMonCard} />
+      <About />
+      <Contact/>
     </div>
   );
 }

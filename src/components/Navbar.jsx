@@ -21,10 +21,10 @@ export default function Navbar() {
   }
   console.log(user);
   return (
-    <nav className="bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 p-4 shadow-lg">
+    <nav className="p-4 shadow-lg drop-shadow-2xl">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <a href="/" className="text-white text-2xl font-bold">
+        <a href="/" className="text-black text-2xl font-bold">
           Pokémon Explorer
         </a>
 
@@ -32,25 +32,25 @@ export default function Navbar() {
         <div className="hidden md:flex space-x-6">
           <a
             href="/"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             Home
           </a>
           <a
             href="/favorites"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             Favorites
           </a>
           <a
             href="/about"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             About
           </a>
           <a
             href="/contact"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             Contact
           </a>
@@ -58,7 +58,7 @@ export default function Navbar() {
          <button onClick={handleSignOut}>
            <a
             href=""
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             LogOut 
           </a>
@@ -66,7 +66,7 @@ export default function Navbar() {
         ) : (
           <a
             href="/login"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             Login
           </a>
@@ -75,7 +75,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="block md:hidden text-white focus:outline-none"
+          className="block md:hidden text-black focus:outline-none"
           onClick={() => {
             const menu = document.getElementById("mobile-menu");
             menu.classList.toggle("hidden");
@@ -105,39 +105,39 @@ export default function Navbar() {
       >
         <a
           href="/home"
-          className="block text-white hover:text-gray-200 transition duration-200"
+          className="block text-black hover:text-gray-200 transition duration-200"
         >
           Home
         </a>
         <a
           href="/explore"
-          className="block text-white hover:text-gray-200 transition duration-200"
+          className="block text-black hover:text-gray-200 transition duration-200"
         >
           Explore
         </a>
         <a
           href="/about"
-          className="block text-white hover:text-gray-200 transition duration-200"
+          className="block text-black hover:text-gray-200 transition duration-200"
         >
           About
         </a>
         <a
           href="/contact"
-          className="block text-white hover:text-gray-200 transition duration-200"
+          className="block text-black hover:text-gray-200 transition duration-200"
         >
           Contact
         </a>
         {user ? (
           <a
             href="/logout"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             LogOut
           </a>
         ) : (
           <a
             href="/login"
-            className="text-white hover:text-gray-200 transition duration-200"
+            className="text-black hover:text-gray-200 transition duration-200"
           >
             Login
           </a>

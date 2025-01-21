@@ -20,7 +20,7 @@ export default function SignUp() {
   };
   return (
     <div>
-      <div className="h-auto bg-gradient-to-r from-teal-400 to-blue-500 flex justify-center items-center">
+      <div className="h-auto  flex justify-center items-center">
         <form action="" onSubmit={handleSignUp}>
           <div className="bg-white rounded-lg shadow-lg p-8 w-full max-w-sm my-5">
             <h1 className="text-3xl font-extrabold text-center text-blue-600 mb-6">

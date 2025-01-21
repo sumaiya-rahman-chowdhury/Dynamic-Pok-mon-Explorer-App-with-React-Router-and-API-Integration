@@ -10,7 +10,8 @@ export default function FetchedPokemon({ data }) {
 
   return (
     <div>
-      <h1 className="text-4xl font-extrabold text-center text-gray-800 my-6 bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 text-transparent bg-clip-text shadow-lg">
+      <h1 className="text-4xl font-extrabold text-center
+      mb-8 text-purple-600">
         Pokémon List
       </h1>
 

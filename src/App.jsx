@@ -8,6 +8,7 @@ import Favorites from "./pages/Favorites";
 import Login from "./pages/Login";
 import PrivateRoute from "./pages/PrivateRoute";
 import SignUp from "./pages/SignUp";
+import Contact from "./pages/Contact";
 
 export default function App() {
   return (
@@ -27,6 +28,7 @@ export default function App() {
         <Route path="details/pokemon/:name" element={<DetailsPage />} />
         <Route path="login" element={<Login />} />
         <Route path="sign-up" element={<SignUp/>} />
+        <Route path="contact" element={<Contact/>} />
       </Route>
     </Routes>
     </div>
