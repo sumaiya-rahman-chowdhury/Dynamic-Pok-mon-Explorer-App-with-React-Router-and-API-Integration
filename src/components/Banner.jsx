@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../slice/slice";
-import DisplayFetchdPokemon from "./DisplayFetchdPokemon";
 
 export default function Banner({ onSearch }) {
   const [searchContent, setSearchContent] = useState([]);
