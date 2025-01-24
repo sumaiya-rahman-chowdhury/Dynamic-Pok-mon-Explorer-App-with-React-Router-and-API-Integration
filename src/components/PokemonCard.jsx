@@ -3,7 +3,7 @@ import PokemonImage from "./PokemonImage";
 import { Link } from "react-router";
 
 export default function PokemonCard({ pokemon }) {
-    console.log(pokemon)
+    // console.log(pokemon)
   const { name, url } = pokemon;
   return (
     <div className="box pokemon-card rounded-lg shadow-lg transform transition hover:scale-105 w-72">
