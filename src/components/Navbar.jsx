@@ -21,7 +21,7 @@ export default function Navbar() {
   }
   console.log(user);
   return (
-    <nav className="p-4 shadow-lg drop-shadow-2xl">
+    <nav className="p-4 shadow-lg drop-shadow-2xl ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <a href="/" className="text-black text-2xl font-bold">
@@ -104,7 +104,7 @@ export default function Navbar() {
         className="hidden md:hidden bg-purple-700 p-4 text-center space-y-4"
       >
         <a
-          href="/home"
+          href="/"
           className="block text-black hover:text-gray-200 transition duration-200"
         >
           Home
@@ -128,12 +128,11 @@ export default function Navbar() {
           Contact
         </a>
         {user ? (
-          <a
-            href="/logout"
+          <button onClick={()=>handleSignOut()}           
             className="text-black hover:text-gray-200 transition duration-200"
           >
             LogOut
-          </a>
+          </button>
         ) : (
           <a
             href="/login"
